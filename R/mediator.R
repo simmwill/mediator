@@ -56,7 +56,9 @@ mediator.default <- function(data, out.model, med.model, treat, a = 1, a_star = 
   } else if (class(out.model)[1] == "lm") {
       "linear"
   } else if (class(out.model)[1] == "glm") {
-      if (out.model$family$family == "binomial") "logistic" else
+      # if (out.model$family$family == "binomial") "logistic" else
+      if (out.model$family$family == "binomial" |
+          (out.model$family$family == "poisson" & out.model$family$link == "log")) "logistic" else  # WS change this - account for poisson model for common binary outcome
         "linear"
   }
 
