@@ -392,11 +392,13 @@ mediator.default <- function(data, out.model, med.model, treat, a = 1, a_star = 
                    `Lower 95% CI` = c(CI_CDE[[1]],
                                       CI_NDE[[1]],
                                       CI_NIE[[1]],
-                                      CI_TE[[1]],NA),
+                                      CI_TE[[1]],
+                                      CI_PM[[1]]),
                    `Upper 95% CI` = c(CI_CDE[[2]],
                                       CI_NDE[[2]],
                                       CI_NIE[[2]],
-                                      CI_TE[[2]], NA))
+                                      CI_TE[[2]],
+                                      CI_PM[[2]]))
 
   # create mediator results object
   mediator <- estimates
